@@ -11,18 +11,15 @@ import { toast } from "react-toastify";
 const DEFAULT_AVATAR = '/images/avatar-01.jpg';
 const AWK_TOKEN_ADDRESS = '0x380DF89D883776ba04f65569F1D1A6E218bFc2dF';
 const RECEIVER_ADDRESS = '0xC2dAe8b4821A37485E44D2947fC84b15C88034BD';
-const CREDIT_BALANCE = 10;
 
 const UserInfoModal = ({
     setShowNamePrompt,
     showNamePrompt,
-    setUserName,
-    userName
+    setUserName
 }: {
     setShowNamePrompt: (show: boolean) => void,
     showNamePrompt: boolean,
     setUserName: (name: string) => void,
-    userName: string
 }) => {
     const { value } = useGlobalContext();
     const [name, setName] = useState('No name');
@@ -77,7 +74,7 @@ const UserInfoModal = ({
                 signer
             );
 
-            const multipliedAmount = (Number(buyAmount) * CREDIT_BALANCE).toString();
+            const multipliedAmount = (Number(buyAmount) * value.credit_price).toString();
             const amount = ethers.utils.parseUnits(multipliedAmount, 18);
 
             const tx = await contract.transfer(RECEIVER_ADDRESS, amount);
@@ -215,13 +212,13 @@ const UserInfoModal = ({
                                 disabled={loading}
                             >
                                 {loading ? (
-                                    <Loading size="sm" variant="nothing" color="white" text="Processing..." />
+                                    <Loading size="sm" variant="nothing" text="Processing..." />
                                 ) : (
                                     'Buy Credit'
                                 )}
                             </button>
                         </div>
-                        <div className="text-xs text-gray-400 mt-1">1 CREDIT = 10 AWK TOKEN.</div>
+                        <div className="text-xs text-gray-400 mt-1">1 CREDIT = {value.credit_price} AWK TOKEN.</div>
                     </div>
                     {error && <div className="text-red-400 text-sm font-semibold text-center mt-2">{error}</div>}
                     <div className="flex flex-col md:flex-row justify-end gap-3 mt-8">

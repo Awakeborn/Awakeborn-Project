@@ -3,7 +3,6 @@ import React from 'react';
 interface LoadingProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   variant?: 'spinner' | 'dots' | 'pulse' | 'nothing';
-  color?: 'white' | 'purple' | 'blue';
   text?: string;
   className?: string;
   fullscreen?: boolean;
@@ -12,7 +11,6 @@ interface LoadingProps {
 const Loading: React.FC<LoadingProps> = ({
   size = 'md',
   variant = 'spinner',
-  color = 'white',
   text = 'Loading...',
   className = '',
   fullscreen = false
@@ -22,12 +20,6 @@ const Loading: React.FC<LoadingProps> = ({
     md: 'w-8 h-8',
     lg: 'w-16 h-16',
     xl: 'w-24 h-24'
-  };
-
-  const colorClasses = {
-    white: 'border-white border-t-transparent',
-    purple: 'border-purple-400 border-t-transparent',
-    blue: 'border-blue-400 border-t-transparent'
   };
 
   // Modern animated spinner with glowing border, shadow, and float
@@ -93,7 +85,7 @@ const Loading: React.FC<LoadingProps> = ({
             to { opacity: 1; }
           }
           .animate-fade-in {
-            animation: fade-in 0.7s cubic-bezier(0.4,0,0.2,1) both;
+            animation: fade-in 0s cubic-bezier(0.4,0,0.2,1) both;
           }
           @keyframes spin-slow {
             100% { transform: rotate(360deg); }
@@ -106,7 +98,7 @@ const Loading: React.FC<LoadingProps> = ({
             50% { transform: translateY(-12px); }
           }
           .animate-float {
-            animation: float 2.2s ease-in-out infinite;
+            animation: float 1.2s ease-in-out infinite;
           }
         `}</style>
       </div>
