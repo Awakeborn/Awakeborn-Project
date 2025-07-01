@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { createClient } from '@supabase/supabase-js';
 
 // Initialize Supabase client
-const supabaseUrl = "https://bfeoqbepzynvgtahkpna.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZW9xYmVwenludmd0YWhrcG5hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEwMzU4MjcsImV4cCI6MjA2NjYxMTgyN30.s_iuMBBtALFWzJlkhI2xRYaE_9FDHJkIhIk8XoTIifY";
+const supabaseUrl = "https://jkpswqodrvbyemeaatwo.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprcHN3cW9kcnZieWVtZWFhdHdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTExMjEwNjEsImV4cCI6MjA2NjY5NzA2MX0.P2ZuI5QhzmAu-yI09gOgiM-tF8Rh3TdyOLPfiAN9Rr8";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const TABS = ["Users", "Chat History", "Credit Pricing"];

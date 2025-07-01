@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Check if we're in a build environment or if environment variables are missing
-const supabaseUrl = "https://bfeoqbepzynvgtahkpna.supabase.co";
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZW9xYmVwenludmd0YWhrcG5hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEwMzU4MjcsImV4cCI6MjA2NjYxMTgyN30.s_iuMBBtALFWzJlkhI2xRYaE_9FDHJkIhIk8XoTIifY"
+const supabaseUrl = "https://jkpswqodrvbyemeaatwo.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprcHN3cW9kcnZieWVtZWFhdHdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTExMjEwNjEsImV4cCI6MjA2NjY5NzA2MX0.P2ZuI5QhzmAu-yI09gOgiM-tF8Rh3TdyOLPfiAN9Rr8"
 
 // Create a mock client for build time if environment variables are missing
 const createMockClient = () => {
