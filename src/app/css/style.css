@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+/* Additional styles */
+@import "./additional-styles/utility-patterns.css" layer(components);
+@import "./additional-styles/theme.css";
+
+html {
+  font-family: "Inter", "Nacelle", "Segoe UI", "Roboto", "Helvetica Neue", Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0a0a13;
+  color: #e5e7eb;
+}
+
+body {
+  background: #0a0a13;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #a78bfa #232136;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 10px;
+  background: #232136;
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #a78bfa 30%, #818cf8 100%);
+  border-radius: 8px;
+  border: 2px solid #232136;
+}
+
+body::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track {
+  background: #232136;
+  border-radius: 8px;
+}
+
+:root {
+  --font-inter: Inter, sans-serif;
+  --font-nacelle: Nacelle, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.5384;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5715;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.5333;
+  --text-base--letter-spacing: -0.0125em;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.5;
+  --text-lg--letter-spacing: -0.0125em;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.5;
+  --text-xl--letter-spacing: -0.0125em;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 1.415;
+  --text-2xl--letter-spacing: -0.0268em;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 1.3571;
+  --text-3xl--letter-spacing: -0.0268em;
+  --text-4xl: 2.5rem;
+  --text-4xl--line-height: 1.1;
+  --text-4xl--letter-spacing: -0.0268em;
+  --text-5xl: 3.5rem;
+  --text-5xl--line-height: 1;
+  --text-5xl--letter-spacing: -0.0268em;
+  --text-6xl: 4rem;
+  --text-6xl--line-height: 1;
+  --text-6xl--letter-spacing: -0.0268em;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --text-7xl--letter-spacing: -0.0268em;
+
+  --animate-shine: shine 5s ease-in-out 500ms infinite;
+  --animate-gradient: gradient 6s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    top: 0;
+    transform: scaleY(5);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.8;
+  }
+
+  20% {
+    top: 100%;
+    transform: scaleY(10);
+    opacity: 0;
+  }
+
+  100% {
+    top: 100%;
+    transform: scaleY(1);
+    opacity: 0;
+  }
+}
+
+@keyframes gradient {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  .animate-gradient-move {
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease-in-out infinite;
+  }
+
+  @keyframes gradientMove {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s both;
+  }
+
+  .animate-fade-in-slow {
+    animation: fadeIn 2s both;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .animate-fade-in-glow {
+    animation: fadeInGlow 1.2s both;
+  }
+
+  .animate-fade-in-glow-text {
+    animation: fadeInGlowText 1.2s both;
+  }
+
+  @keyframes fadeInGlow {
+    from {
+      opacity: 0;
+      box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.3);
+    }
+
+    to {
+      opacity: 1;
+      box-shadow: 0 0 32px 8px rgba(168, 85, 247, 0.15);
+    }
+  }
+
+  @keyframes fadeInGlowText {
+    from {
+      opacity: 0;
+      text-shadow: 0 0 0 rgba(168, 85, 247, 0.3);
+    }
+
+    to {
+      opacity: 1;
+      text-shadow: 0 0 16px rgba(168, 85, 247, 0.25);
+    }
+  }
+
+  .border-animated-gradient {
+    border-image: linear-gradient(90deg, #a855f7, #ec4899, #3b82f6, #a855f7) 1;
+  }
+
+  .animate-fade-in-feature {
+    animation: fadeInFeature 1s both;
+  }
+
+  @keyframes fadeInFeature {
+    from {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .glass {
+    background: rgba(24, 24, 36, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1.25rem;
+    border: 1.5px solid rgba(168, 85, 247, 0.12);
+    box-shadow: 0 4px 32px 0 rgba(80, 80, 120, 0.12);
+  }
+
+  .shadow-xl-strong {
+    box-shadow: 0 8px 32px 0 rgba(80, 80, 120, 0.22),
+      0 1.5px 8px 0 rgba(168, 85, 247, 0.08);
+  }
+
+  .focus-style {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
+    border-color: #a855f7;
+  }
+}
