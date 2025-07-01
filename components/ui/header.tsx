@@ -60,7 +60,7 @@ export default function Header() {
         }
 
         setIsInitialLoading(false);
-      }
+      } else setIsInitialLoading(false);
     };
 
     sync();
