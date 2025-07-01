@@ -13,7 +13,7 @@ export default function ContactUs() {
     const formData = { name, email, category, description };
 
     try {
-      const res = await fetch('/contact/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
