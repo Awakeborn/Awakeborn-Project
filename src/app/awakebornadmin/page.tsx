@@ -302,7 +302,7 @@ export default function AwakebornAdmin() {
             else {
                 setEditUser(null);
                 // Refresh users
-                const { data } = await supabase.from('user_list').select('*').order('created_at', { ascending: false });
+                const { data } = await supabase.from('user_list').select('*').order('inserted_at', { ascending: false });
                 setUsers(data || []);
             }
         } catch (e) {
@@ -323,7 +323,7 @@ export default function AwakebornAdmin() {
             else {
                 setDeleteUserId(null);
                 // Refresh users
-                const { data } = await supabase.from('user_list').select('*').order('created_at', { ascending: false });
+                const { data } = await supabase.from('user_list').select('*').order('inserted_at', { ascending: false });
                 setUsers(data || []);
             }
         } catch (e) {
@@ -349,7 +349,7 @@ export default function AwakebornAdmin() {
             else {
                 setEditChat(null);
                 // Refresh chat
-                let query = supabase.from('chat_histories').select('*').order('created_at', { ascending: false });
+                let query = supabase.from('chat_histories').select('*').order('inserted_at', { ascending: false });
                 if (selectedUser && selectedUser.wallet_address) query = query.eq('wallet', selectedUser.wallet_address);
                 const { data } = await query;
                 setChatHistory(data || []);
@@ -372,7 +372,7 @@ export default function AwakebornAdmin() {
             else {
                 setDeleteChatId(null);
                 // Refresh chat
-                let query = supabase.from('chat_histories').select('*').order('created_at', { ascending: false });
+                let query = supabase.from('chat_histories').select('*').order('date', { ascending: false });
                 if (selectedUser && selectedUser.wallet_address) query = query.eq('wallet', selectedUser.wallet_address);
                 const { data } = await query;
                 setChatHistory(data || []);

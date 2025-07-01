@@ -36,17 +36,17 @@ export default function HeroHome() {
 
     try {
       setLoading(true);
-      // const provider = new ethers.providers.Web3Provider(walletClient?.transport as any);
-      // const signer = provider.getSigner();
-      // const contract = new ethers.Contract(
-      //   AWK_TOKEN_ADDRESS,
-      //   ['function transfer(address to, uint256 amount) public returns (bool)'],
-      //   signer
-      // );
+      const provider = new ethers.providers.Web3Provider(walletClient?.transport as any);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(
+        AWK_TOKEN_ADDRESS,
+        ['function transfer(address to, uint256 amount) public returns (bool)'],
+        signer
+      );
 
-      // const amount = ethers.utils.parseUnits(PAYMENT_AMOUNT, 18);
-      // const tx = await contract.transfer(RECEIVER_ADDRESS, amount);
-      // await tx.wait();
+      const amount = ethers.utils.parseUnits(PAYMENT_AMOUNT, 18);
+      const tx = await contract.transfer(RECEIVER_ADDRESS, amount);
+      await tx.wait();
 
 
       // Remove the accidental early return that prevented the rest of the code from running
