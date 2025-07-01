@@ -117,7 +117,7 @@ export default function WalletConnect() {
                     disabled={isSwitchingNetwork}
                   >
                     {isSwitchingNetwork ? (
-                      <Loading size="sm" variant='nothing' text='' color="white" />
+                      <Loading size="sm" variant='nothing' text='' />
                     ) : null}
                     {isSwitchingNetwork ? 'Switching...' : 'Switch to Polygon'}
                   </button>
@@ -132,7 +132,7 @@ export default function WalletConnect() {
                       className="font-semibold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent text-sm cursor-pointer group w-[80px] overflow-hidden text-ellipsis whitespace-nowrap text-center"
                     >
                       {isLoading ? (
-                        <Loading size="sm" color="purple" />
+                        <Loading size="sm" />
                       ) : (
                         userName || 'Connected'
                       )}
@@ -181,7 +181,7 @@ export default function WalletConnect() {
                       {account.displayBalance ? ` (${account.displayBalance})` : ''}
                     </button>
                   </div>
-                  <UserInfoModal setShowNamePrompt={setShowNamePrompt} showNamePrompt={showNamePrompt} setUserName={setUserName} userName={userName} />
+                  <UserInfoModal setShowNamePrompt={setShowNamePrompt} showNamePrompt={showNamePrompt} setUserName={setUserName} />
                 </div>
               );
             })()}

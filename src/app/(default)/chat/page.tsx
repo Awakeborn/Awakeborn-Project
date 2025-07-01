@@ -112,7 +112,7 @@ export default function ChatPage() {
 
           {isInitialLoading ? (
             <div className="flex-1 flex flex-col items-center justify-center py-20">
-              <Loading size="lg" color="purple" text="Loading chat..." />
+              <Loading size="lg" text="Loading chat..." />
             </div>
           ) : (
             <>
@@ -148,7 +148,7 @@ export default function ChatPage() {
                   className="px-6 py-3 rounded-xl font-bold shadow-lg transition-all duration-200 text-white text-base bg-gradient-to-r from-purple-500 via-blue-500 to-gray-800 hover:from-purple-600 hover:to-blue-700 focus:ring-2 focus:ring-purple-300/30 cursor-pointer ring-1 ring-inset ring-purple-400/20 hover:shadow-xl transform hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
-                    <Loading size="sm" variant='nothing' color="white" text="Sending..." />
+                    <Loading size="sm" variant='nothing' text="Sending..." />
                   ) : (
                     'Send'
                   )}
