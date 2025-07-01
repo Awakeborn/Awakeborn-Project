@@ -385,13 +385,13 @@ export default function AwakebornAdmin() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-purple-950 flex items-center justify-center p-4">
-            <div className="w-full max-w-5xl bg-gray-900/90 rounded-3xl shadow-2xl border border-purple-900/40 p-8 md:p-12 animate-fade-in-up">
+        <div className="min-h-screen animate-fade-in bg-gradient-to-br from-gray-950 via-gray-900 to-purple-950 flex items-center justify-center p-4">
+            <div className="w-full animate-fade-in max-w-5xl bg-gray-900/90 rounded-3xl shadow-2xl border border-purple-900/40 p-8 md:p-12 animate-fade-in-up">
                 <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-8 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent drop-shadow-xl tracking-tight">
                     Awakeborn Admin
                 </h1>
                 {!isAuthenticated ? (
-                    <form onSubmit={handleLogin} className="flex flex-col gap-6 items-center">
+                    <form onSubmit={handleLogin} className="flex animate-fade-in flex-col gap-6 items-center">
                         <input
                             type="password"
                             value={password}
@@ -408,8 +408,8 @@ export default function AwakebornAdmin() {
                         </button>
                     </form>
                 ) : (
-                    <div>
-                        <div className="flex justify-between items-center mb-8">
+                    <div className="animate-fade-in">
+                        <div className="flex animate-fade-in justify-between items-center mb-8">
                             <div className="flex gap-2 md:gap-4">
                                 {TABS.map(tab => (
                                     <button
@@ -430,7 +430,7 @@ export default function AwakebornAdmin() {
                                 Logout
                             </button>
                         </div>
-                        <div className="bg-gray-950/80 rounded-2xl p-6 min-h-[300px] shadow-inner border border-purple-900/20">
+                        <div className="bg-gray-950/80 animate-fade-in rounded-2xl p-6 min-h-[300px] shadow-inner border border-purple-900/20">
                             {activeTab === "Users" && (
                                 <div>
                                     {usersLoading ? (
@@ -438,7 +438,7 @@ export default function AwakebornAdmin() {
                                     ) : usersError ? (
                                         <div className="text-center text-red-400 py-8">{usersError}</div>
                                     ) : (
-                                        <div className="overflow-x-auto">
+                                        <div className="overflow-x-auto animate-fade-in">
                                             <table className="min-w-full text-sm md:text-base border-separate border-spacing-y-2 text-center">
                                                 <thead>
                                                     <tr className="bg-gradient-to-r from-purple-900/40 to-blue-900/40 text-purple-200">
@@ -514,7 +514,7 @@ export default function AwakebornAdmin() {
                                     ) : chatError ? (
                                         <div className="text-center text-red-400 py-8">{chatError}</div>
                                     ) : (
-                                        <div className="overflow-x-auto">
+                                        <div className="overflow-x-auto animate-fade-in">
                                             <table className="min-w-full text-sm md:text-base border-separate border-spacing-y-2 text-center">
                                                 <thead>
                                                     <tr className="bg-gradient-to-r from-purple-900/40 to-blue-900/40 text-purple-200">
@@ -553,7 +553,7 @@ export default function AwakebornAdmin() {
                                 </div>
                             )}
                             {activeTab === "Credit Pricing" && (
-                                <div className="flex flex-col md:flex-row gap-8 justify-center items-start w-full">
+                                <div className="flex animate-fade-in flex-col md:flex-row gap-8 justify-center items-start w-full">
                                     {/* Credit Pricing Control */}
                                     <form onSubmit={handleCreditPriceUpdate} className="flex-1 flex flex-col gap-4 bg-gray-900/80 rounded-2xl p-6 shadow border border-purple-900/30 max-w-md mx-auto">
                                         <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">Credit Pricing</h3>
@@ -617,7 +617,7 @@ export default function AwakebornAdmin() {
             </div>
             {/* --- User Edit Modal --- */}
             {editUser && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+                <div className="fixed animate-fade-in inset-0 z-50 flex items-center justify-center bg-black/60">
                     <div className="bg-gray-900 rounded-2xl p-8 w-full max-w-md shadow-2xl border border-purple-900/40">
                         <h2 className="text-xl font-bold mb-4 text-purple-300">Edit User</h2>
                         <div className="flex flex-col gap-3">
@@ -640,7 +640,7 @@ export default function AwakebornAdmin() {
             )}
             {/* --- User Delete Confirm --- */}
             {deleteUserId && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+                <div className="fixed animate-fade-in inset-0 z-50 flex items-center justify-center bg-black/60">
                     <div className="bg-gray-900 rounded-2xl p-8 w-full max-w-sm shadow-2xl border border-purple-900/40 text-center">
                         <h2 className="text-xl font-bold mb-4 text-red-400">Delete User?</h2>
                         <p className="mb-6 text-purple-200">Are you sure you want to delete this user? This cannot be undone.</p>
@@ -654,7 +654,7 @@ export default function AwakebornAdmin() {
             )}
             {/* --- Chat Edit Modal --- */}
             {editChat && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+                <div className="fixed animate-fade-in inset-0 z-50 flex items-center justify-center bg-black/60">
                     <div className="bg-gray-900 rounded-2xl p-8 w-full max-w-md shadow-2xl border border-purple-900/40">
                         <h2 className="text-xl font-bold mb-4 text-purple-300">Edit Chat</h2>
                         <div className="flex flex-col gap-3">
@@ -673,7 +673,7 @@ export default function AwakebornAdmin() {
             )}
             {/* --- Chat Delete Confirm --- */}
             {deleteChatId && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+                <div className="fixed animate-fade-in inset-0 z-50 flex items-center justify-center bg-black/60">
                     <div className="bg-gray-900 rounded-2xl p-8 w-full max-w-sm shadow-2xl border border-purple-900/40 text-center">
                         <h2 className="text-xl font-bold mb-4 text-red-400">Delete Chat?</h2>
                         <p className="mb-6 text-purple-200">Are you sure you want to delete this chat entry? This cannot be undone.</p>
@@ -687,7 +687,7 @@ export default function AwakebornAdmin() {
             )}
             {/* --- View Chat Input/Output Details Modal --- */}
             {viewDetail && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+                <div className="fixed animate-fade-in inset-0 z-50 flex items-center justify-center bg-black/60">
                     <div className="bg-gray-900 rounded-2xl p-8 w-full max-w-lg shadow-2xl border border-purple-900/40">
                         <h2 className="text-xl font-bold mb-4 text-purple-300">{viewDetail.field === 'input' ? 'Chat Input' : 'Chat Output'} Details</h2>
                         <div className="bg-gray-800 text-white rounded-lg p-4 whitespace-pre-wrap break-words max-h-[60vh] overflow-auto">

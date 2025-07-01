@@ -21,7 +21,7 @@ const UserInfoModal = ({
     showNamePrompt: boolean,
     setUserName: (name: string) => void,
 }) => {
-    const { value } = useGlobalContext();
+    const { value, setValue } = useGlobalContext();
     const [name, setName] = useState('No name');
     const [dob, setDob] = useState('');
     const [avatar, setAvatar] = useState<string>(DEFAULT_AVATAR);
@@ -136,6 +136,16 @@ const UserInfoModal = ({
             getInfo();
         }
     }, [isConnected, value.id])
+
+    useEffect(() => {
+        const getCreditPrice = async () => {
+            const adminRes = await fetch('/api/admin-config');
+            let adminData = await adminRes.json();
+            setValue((prev: any) => ({ ...prev, credit_price: adminData.data.credit_price }));
+        }
+
+        getCreditPrice();
+    }, [showNamePrompt])
 
     if (!showNamePrompt) return null;
 
