@@ -1,18 +1,20 @@
 'use client';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 export default function ContactUs() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
-  const [status, setStatus] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = { name, email, category, description };
 
     try {
+      setLoading(true);
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -20,17 +22,20 @@ export default function ContactUs() {
       });
 
       if (res.ok) {
-        setStatus('Your message has been received. Please allow up to 24 business hours for our response.');
+        toast.success('Your message has been received. Please allow up to 24 business hours for our response.')
         setName('');
         setEmail('');
         setCategory('');
         setDescription('');
       } else {
-        setStatus('Submission failed. Please try again later.');
+        toast.warning('Submission failed. Please try again later.')
       }
+      setLoading(false);
     } catch (error) {
       console.error(error);
-      setStatus('Submission failed. Please try again later.');
+      toast.error('Submission failed. Please try again later.')
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -86,13 +91,14 @@ export default function ContactUs() {
 
             <button
               type="submit"
-              className="w-full py-3 px-4 rounded-xl font-bold shadow-lg transition-all duration-200 text-white text-lg mt-2 bg-gradient-to-r from-purple-500 via-blue-500 to-gray-800 hover:from-purple-600 hover:to-blue-700 focus:ring-2 focus:ring-purple-300/30 cursor-pointer ring-1 ring-inset ring-purple-400/20 hover:shadow-xl transform hover:scale-105 hover:-translate-y-0.5"
+              className={
+                loading ? "w-full py-3 px-4 rounded-xl font-bold shadow-lg transition-all duration-200 text-white text-lg mt-2 bg-gradient-to-r from-purple-500 via-blue-500 to-gray-800 hover:from-purple-600 hover:to-blue-700 focus:ring-2 focus:ring-purple-300/30 cursor-pointer ring-1 ring-inset ring-purple-400/20 hover:shadow-xl transform" : "w-full py-3 px-4 rounded-xl font-bold shadow-lg transition-all duration-200 text-white text-lg mt-2 bg-gradient-to-r from-purple-500 via-blue-500 to-gray-800 hover:from-purple-600 hover:to-blue-700 focus:ring-2 focus:ring-purple-300/30 cursor-pointer ring-1 ring-inset ring-purple-400/20 hover:shadow-xl transform hover:scale-105 hover:-translate-y-0.5"
+              }
+              disabled={loading}
             >
-              Submit
+              {loading ? "Submiting..." : "Submit"}
             </button>
           </form>
-
-          {status && <p className="mt-8 text-center text-green-400 font-semibold animate-fade-in-up text-lg">{status}</p>}
         </div>
       </section>
     </main>
