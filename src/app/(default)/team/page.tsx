@@ -9,15 +9,15 @@ const coreMembers = [
         bio: `Debjyoti holds a Master's Degree in Computer Science and has substantial experience in symbolic artificial intelligence, gained through prior roles at leading tech firms. He also brings over 8 years of managerial experience in the banking sector, specifically in treasury management. This unique combination of technology and finance expertise shapes Awakeborn's strategic vision and development roadmap.`,
         x: 'https://x.com/virusinsystem32?t=pLrB-WVVt3Im0j1IllayAA&s=35',
         linkedin: 'https://www.linkedin.com/in/debjyoti-dutta-17b0b9245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        image: '/images/team-01.jpg',
+        image: '/images/founder.jpg',
     },
     {
-        name: '[Your name]',
-        role: 'Web Developer & UI/UX Designer',
-        bio: 'Brief bio of your background',
+        name: 'Quy Dao',
+        role: 'Blockchain & AI Developer',
+        bio: 'Quy Dao holds a Master’s Degree in Computer Science and has extensive experience in blockchain development and artificial intelligence, acquired through pivotal roles at innovative technology companies. He also brings over 5 years of expertise in designing and deploying decentralized applications, smart contracts, and AI-powered solutions across diverse industries. This unique blend of distributed ledger technology and machine learning shapes Awakeborn’s strategic vision and drives its commitment to delivering cutting-edge digital products.',
         x: '#', // Replace with your X profile
         linkedin: '#', // Replace with your LinkedIn profile
-        image: '/images/team-02.jpg',
+        image: '/images/developer.jpg',
     },
 ];
 
