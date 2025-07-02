@@ -96,6 +96,11 @@ export default function Header() {
               About Us
             </span>
           </Link>
+          <Link href="/team">
+            <span className="px-4 py-2 rounded-full transition-all duration-200 cursor-pointer hover:bg-purple-900/30 hover:text-purple-300 focus:bg-purple-900/40 focus:text-purple-200 focus:outline-none shadow-sm hover:-translate-y-0.5">
+              Team
+            </span>
+          </Link>
           <Link href="/contact">
             <span className="px-4 py-2 rounded-full transition-all duration-200 cursor-pointer hover:bg-purple-900/30 hover:text-purple-300 focus:bg-purple-900/40 focus:text-purple-200 focus:outline-none shadow-sm hover:-translate-y-0.5">
               Contact Us
