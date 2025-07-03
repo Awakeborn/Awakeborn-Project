@@ -62,7 +62,9 @@ export default function TeamPage() {
                             <p className="text-purple-100/80 text-sm mb-4 text-center">{member.bio}</p>
                             <div className="flex justify-center gap-2">
                                 <SocialIcon type="x" href={member.x} />
-                                <SocialIcon type="linkedin" href={member.linkedin} />
+                                {
+                                    i === 1 ? <SocialIcon type="linkedin" href={member.linkedin} /> : ''
+                                }
                             </div>
                         </div>
                     ))}
