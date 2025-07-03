@@ -13,10 +13,10 @@ const coreMembers = [
     },
     {
         name: 'Quy Dao',
-        role: 'Blockchain & AI Developer',
-        bio: 'Quy Dao holds a Master’s Degree in Computer Science and has extensive experience in blockchain development and artificial intelligence, acquired through pivotal roles at innovative technology companies. He also brings over 5 years of expertise in designing and deploying decentralized applications, smart contracts, and AI-powered solutions across diverse industries. This unique blend of distributed ledger technology and machine learning shapes Awakeborn’s strategic vision and drives its commitment to delivering cutting-edge digital products.',
-        x: '#', // Replace with your X profile
-        linkedin: '#', // Replace with your LinkedIn profile
+        role: 'Web Developer & UI/UX Designer',
+        bio: "Quy Dao holds a Master's Degree in Web Development and has substantial experience in designing and building modern digital experiences, gained through prior roles at leading technology companies. He also brings over 5 years of expertise in UI/UX design, specifically in creating intuitive and engaging interfaces for diverse industries. This unique combination of development and design skills shapes Awakeborn's creative vision and product roadmap.",
+        x: 'https://x.com/thchu268837?s=11',
+        linkedin: 'https://www.linkedin.com/in/quy-dao-17b0b9245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         image: '/images/developer.jpg',
     },
 ];
