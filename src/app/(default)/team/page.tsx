@@ -63,7 +63,7 @@ export default function TeamPage() {
                             <div className="flex justify-center gap-2">
                                 <SocialIcon type="x" href={member.x} />
                                 {
-                                    i === 1 ? <SocialIcon type="linkedin" href={member.linkedin} /> : ''
+                                    i === 0 ? <SocialIcon type="linkedin" href={member.linkedin} /> : ''
                                 }
                             </div>
                         </div>
