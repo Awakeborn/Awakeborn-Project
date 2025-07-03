@@ -14,7 +14,7 @@ const coreMembers = [
     {
         name: 'Quy Dao',
         role: 'Web Developer & UI/UX Designer',
-        bio: "Quy Dao holds a Master's Degree in Web Development and has substantial experience in designing and building modern digital experiences, gained through prior roles at leading technology companies. He also brings over 5 years of expertise in UI/UX design, specifically in creating intuitive and engaging interfaces for diverse industries. This unique combination of development and design skills shapes Awakeborn's creative vision and product roadmap.",
+        bio: "Quy Dao is a skilled Web Developer and UI/UX Designer who creates engaging digital experiences that combine clean design with robust functionality. Proficient in both front-end and back-end development, he builds responsive websites and applications tailored to client needs. His approach emphasizes intuitive interfaces and user satisfaction. Always driven by curiosity and innovation, he continually hones his skills to deliver impactful solutions in the dynamic world of web development.",
         x: 'https://x.com/thchu268837?s=11',
         linkedin: 'https://www.linkedin.com/in/quy-dao-17b0b9245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         image: '/images/developer.jpg',
